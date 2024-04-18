@@ -2,6 +2,12 @@ const express = require('express');
 const exphbs  = require('express-handlebars'); // Import express-handlebars module
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
+const routes = require('./routes/routes.js'); // Import routes
+const PORT = process.env.PORT || 3000;
+
+app.use(bodyParser.json());
+app.use(routes); 
 
 // Set Handlebars as the view engine
 app.engine('handlebars', exphbs.engine());
@@ -19,13 +25,15 @@ app.get('/signup', (req, res) => {
     res.render('signup', { title: 'Sign Up', isSignupPage: true }); // Pass isSignupPage as true
 });
 
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 
-// Route for the home page
-app.get('/', (req, res) => {
-    res.send('Hello World!');
 });
 
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+
+
+
+
+
+
+
