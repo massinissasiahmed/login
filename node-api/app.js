@@ -4,9 +4,10 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes/routes.js'); // Import routes
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(routes); 
 
 // Set Handlebars as the view engine
@@ -15,6 +16,10 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Route to render the login page
+app.get('/', (req, res) => {
+    res.render('login', { title: 'Home' });
+});
+
 // Route for login page
 app.get('/login', (req, res) => {
     res.render('login', { title: 'Login', isSignupPage: false }); // Pass isSignupPage as false
