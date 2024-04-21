@@ -1,19 +1,21 @@
 <header class="header">
-  <div class="container">
-    <a href="/" class="logo">{{heade}}</a>
-    <select onchange="functChange(this)">
-      <option>🌍</option>
-      <option value="fr">frensh</option>
-      <option value="en">english</option>
-      <option value="ar">arabic</option>
-    </select>
-    {{! <button onclick="functChange()">change language to english</button> }}
-    <div class="header-buttons">
-      {{#if isSignupPage}}
-        <button onclick="location.href='/login'">Login</button>
-      {{else}}
-        <button onclick="location.href='/signup'">Sign Up</button>
-      {{/if}}
+    <div class="container">
+        <a href="/" class="logo">{{header.chou}}</a>
+        <select onchange="functChange(this)">
+            <option>🌍</option>
+            <option value="fr">{{header.fr}}</option>
+            <option value="en">{{header.en}}</option>
+            <option value="ar">{{header.ar}}</option>
+        </select>
+        {{!-- <button onclick="functChange()">change language to english</button> --}}
+        <div class="header-buttons">
+            {{#if isSignupPage}}
+                <button onclick="location.href='/login'">{{header.login}}</button>
+            {{else}}
+                <button onclick="location.href='/signup'">{{header.signup}}</button>
+            {{/if}}
+        </div>
+
     </div>
   </div>
 </header>

@@ -5,7 +5,16 @@
     "email": "Email :",
     "password": "Mot de passe :",
     "name": "Nom :",
-    "signup": "S'inscrire"},
+    "signup": "S'inscrire",
+    "login": "Connexion"},
+
+  "header": {
+    "chou": "Chou",
+    "login": "Connexion",
+    "signup": "S'inscrire",
+    "fr": "français",
+    "en": "anglais",
+    "ar": "arabe"},
 
   "header":{
     "chou": "Chou",
