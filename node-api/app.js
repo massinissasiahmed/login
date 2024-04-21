@@ -23,7 +23,7 @@ i18next
     detection: detections,
     fallbackLng: "fr",
     backend: {
-      loadPath: "./locales/{{lng}}/translation.json",
+      loadPath: "./locales/{{lng}}.json",
     },
   });
 
