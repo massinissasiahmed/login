@@ -2,7 +2,6 @@ const express = require("express");
 const i18next = require("i18next");
 const i18nexBackend = require("i18next-fs-backend");
 const i18nextMiddleware = require("i18next-http-middleware");
-1;
 const exphbs = require("express-handlebars"); // Import express-handlebars module
 const app = express();
 const path = require("path");
@@ -40,20 +39,35 @@ app.set("view engine", "handlebars");
 app.use(express.static(path.join(__dirname, "public")));
 
 // Route to render the login page
-app.get('/', (req, res) => {
-    res.render('login', { title: 'Home',header: req.t('header',{ returnObjects:true}),body: req.t('body', { returnObjects:true}), footer: req.t('footer',{ returnObjects:true}) });
+app.get("/", (req, res) => {
+  res.render("login", {
+    title: "Home",
+    header: req.t("header", { returnObjects: true }),
+    body: req.t("body", { returnObjects: true }),
+    footer: req.t("footer", { returnObjects: true }),
+  });
 });
 
 // Route for login page
-app.get('/login', (req, res) => {
-     res.render('login', { title: 'Login', isSignupPage: false, header: req.t('header',{ returnObjects:true}),body: req.t('body', { returnObjects:true}), footer: req.t('footer',{ returnObjects:true})}); // Pass isSignupPage as false
-
+app.get("/login", (req, res) => {
+  res.render("login", {
+    title: "Login",
+    isSignupPage: false,
+    header: req.t("header", { returnObjects: true }),
+    body: req.t("body", { returnObjects: true }),
+    footer: req.t("footer", { returnObjects: true }),
+  }); // Pass isSignupPage as false
 });
 
 // Route for signup page
-app.get('/signup', (req, res) => {
-    res.render('signup', { title: 'Sign Up', isSignupPage: true, header: req.t('header',{ returnObjects:true}),body: req.t('body', { returnObjects:true}), footer: req.t('footer',{ returnObjects:true})}); // Pass isSignupPage as true
-
+app.get("/signup", (req, res) => {
+  res.render("signup", {
+    title: "Sign Up",
+    isSignupPage: true,
+    header: req.t("header", { returnObjects: true }),
+    body: req.t("body", { returnObjects: true }),
+    footer: req.t("footer", { returnObjects: true }),
+  }); // Pass isSignupPage as true
 });
 
 app.listen(PORT, () => {

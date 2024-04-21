@@ -1,14 +1,37 @@
 {{!< layouts/main }}
 
 <div class="login-container">
-    <h2>{{body.create}}</h2>
-    <form class="login-form" action="/login" method="post">
-        <label for="phone">{{body.phone}}</label>
-        <input type="phone" id="phone" name="nmr" required>
+  <h2>{{body.create}}</h2>
+  <form class="login-form" action="/login" method="post">
+    <label for="phone">{{body.phone}}</label>
+    <input type="phone" id="phone" name="nmr" required />
 
-        <label for="password">{{body.password}}</label>
-        <input type="password" id="mdp" name="mdp" required>
+    <label for="password">{{body.password}}</label>
+    <input type="password" id="mdp" name="mdp" required />
 
-        <button type="submit">{{body.login}}</button>
-    </form>
+    <button type="submit">{{body.login}}</button>
+  </form>
 </div>
+
+<script>
+    function getCookie(name) {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Check if this cookie is the one we're looking for
+            if (cookie.startsWith(name + '=')) {
+                // Extract and return the cookie value
+                return cookie.substring(name.length + 1);
+            }
+        }
+        // Return null if cookie not found
+        return null;
+    }
+
+    const currentLang = localStorage.getItem("lang");
+  
+    if (currentLang && !getCookie("lang")) {
+        document.cookie = "lang=" + currentLang + "; path=/";
+        history.go();
+    }
+</script>

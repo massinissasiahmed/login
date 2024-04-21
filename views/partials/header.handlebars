@@ -22,8 +22,8 @@
 
 <script>
     function functChange(selectObject) {
-        console.log(selectObject.value)
         document.cookie = "lang=" + selectObject.value + "; path=/";
-        history.go()
+        localStorage.setItem("lang", selectObject.value);
+        history.go();
     }
 </script>
