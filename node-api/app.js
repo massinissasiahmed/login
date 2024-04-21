@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 // Route for login page
 app.get('/login', (req, res) => {
-     res.render('login', { title: 'Login', isSignupPage: false, body: i18next.t('body', {lng: req.cookies.Cookie_1, returnObjects:true}) }); // Pass isSignupPage as false
+     res.render('login', { title: 'Login', isSignupPage: false, body: req.t('body', { returnObjects:true}) }); // Pass isSignupPage as false
 
 });
 

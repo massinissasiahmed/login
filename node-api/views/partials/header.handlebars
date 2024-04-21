@@ -1,11 +1,13 @@
 <header class="header">
     <div class="container">
         <a href="/" class="logo">{{heade}}</a>
-        <select onchange="functChange()">
-            <option value="ar">arabic</option>
+        <select onchange="functChange(this)">
+            <option>🌍</option>
             <option value="fr">frensh</option>
             <option value="en">english</option>
+            <option value="ar">arabic</option>
         </select>
+        {{!-- <button onclick="functChange()">change language to english</button> --}}
         <div class="header-buttons">
             {{#if isSignupPage}}
                 <button onclick="location.href='/login'">Login</button>
@@ -18,7 +20,11 @@
 
 
 <script>
-    functChange(){
-        document.cookie = "language=" + this.value + "; path=/";
+    const mySelect = document.getElementsByTagName("select")
+
+    function functChange(selectObject) {
+        console.log(selectObject.value)
+        document.cookie = "i18next=" + selectObject.value + "; path=/";
+        history.go()
     }
 </script>
