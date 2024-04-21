@@ -5,12 +5,16 @@
     "email": "Email :",
     "password": "Mot de passe :",
     "name": "Nom :",
-    "signup": "S'inscrire"},
+    "signup": "S'inscrire",
+    "login": "Connexion"},
 
-  "header":{
+  "header": {
     "chou": "Chou",
     "login": "Connexion",
-    "signup": "S'inscrire"},
+    "signup": "S'inscrire",
+    "fr": "français",
+    "en": "anglais",
+    "ar": "arabe"},
 
   "footer" :{
     "nameapp": "Application Chou",

@@ -34,12 +34,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Route to render the login page
 app.get('/', (req, res) => {
-    res.render('login', { title: 'Home' });
+    res.render('login', { title: 'Home',header: req.t('header',{ returnObjects:true}),body: req.t('body', { returnObjects:true}), footer: req.t('footer',{ returnObjects:true}) });
 });
 
 // Route for login page
 app.get('/login', (req, res) => {
-     res.render('login', { title: 'Login', isSignupPage: false, body: req.t('body', { returnObjects:true}) }); // Pass isSignupPage as false
+     res.render('login', { title: 'Login', isSignupPage: false, header: req.t('header',{ returnObjects:true}),body: req.t('body', { returnObjects:true}), footer: req.t('footer',{ returnObjects:true})}); // Pass isSignupPage as false
 
 });
 
@@ -47,7 +47,7 @@ app.get('/login', (req, res) => {
 
 // Route for signup page
 app.get('/signup', (req, res) => {
-    res.render('signup', { title: 'Sign Up', isSignupPage: true }); // Pass isSignupPage as true
+    res.render('signup', { title: 'Sign Up', isSignupPage: true, header: req.t('header',{ returnObjects:true}),body: req.t('body', { returnObjects:true}), footer: req.t('footer',{ returnObjects:true})}); // Pass isSignupPage as true
 });
 
 app.listen(PORT, () => {

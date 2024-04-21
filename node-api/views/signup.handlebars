@@ -1,22 +1,22 @@
 {{!< layouts/main }}
 
 <div class="signup-container">
-    <h2>Create an Account</h2>
+    <h2>{{body.create}}</h2>
     <form class="signup-form" action="/signup" method="post"> <!-- Update action to /register -->
 
-        <label for="phone">Phone Number:</label>
+        <label for="phone">{{body.phone}}</label>
         <input type="phone" id="nmr" name="nmr" required> <!-- Change name attribute to 'nmr' for phone number field -->
 
-        <label for="email">Email:</label>
+        <label for="email">{{body.email}}</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="password">Password:</label>
+        <label for="password">{{body.password}}</label>
         <input type="password" id="mdp" name="mdp" required> <!-- Change name attribute to 'mdp' for password field -->
 
-        <label for="name">Name:</label>
+        <label for="name">{{body.name}}</label>
         <input type="text" id="nom" name="nom" required> <!-- Change name attribute to 'nom' for name field -->
 
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">{{body.signup}}</button>
     </form>
 </div>
