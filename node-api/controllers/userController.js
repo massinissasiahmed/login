@@ -14,7 +14,7 @@ const registerUser = async (req, res) => {
     }
 
     const newUser = await userModel.createUser(nmr, email, mdp, nom);
-    res.status(201).send({ message: 'Utilisateur cree avec succes.', user: newUser });
+    res.redirect("/login").status(201)
   } catch (error) {
     res.status(500).send({ message: 'Erreur.', error: error.message });
   }
