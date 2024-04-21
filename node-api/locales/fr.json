@@ -16,11 +16,6 @@
     "en": "anglais",
     "ar": "arabe"},
 
-  "header":{
-    "chou": "Chou",
-    "login": "Connexion",
-    "signup": "S'inscrire"},
-
   "footer" :{
     "nameapp": "Application Chou",
     "version": "Version 1.0",
