@@ -1,5 +1,5 @@
 {
-  "bodySignup":{
+  "body":{
     "create": "Create an Account",
     "phone": "Phone Number:",
     "email": "Email:",
