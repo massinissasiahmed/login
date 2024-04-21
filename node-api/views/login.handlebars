@@ -1,9 +1,9 @@
 {{!< layouts/main }}
 
 <div class="login-container">
-    <h2>Login to Your Account</h2>
+    <h2>{{body.create}}</h2>
     <form class="login-form" action="/login" method="post">
-        <label for="phone">Phone:</label>
+        <label for="phone">{{body.phone}}</label>
         <input type="phone" id="phone" name="nmr" required>
 
         <label for="password">Password:</label>

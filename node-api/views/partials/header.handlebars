@@ -1,7 +1,11 @@
 <header class="header">
     <div class="container">
-        <a href="/" class="logo">{{heade.chou}}</a>
-        
+        <a href="/" class="logo">{{heade}}</a>
+        <select onchange="functChange()">
+            <option value="ar">arabic</option>
+            <option value="fr">frensh</option>
+            <option value="en">english</option>
+        </select>
         <div class="header-buttons">
             {{#if isSignupPage}}
                 <button onclick="location.href='/login'">Login</button>
@@ -11,3 +15,10 @@
         </div>
     </div>
 </header>
+
+
+<script>
+    functChange(){
+        document.cookie = "language=" + this.value + "; path=/";
+    }
+</script>
