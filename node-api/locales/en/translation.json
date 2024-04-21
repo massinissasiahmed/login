@@ -1,0 +1,23 @@
+{
+  "bodySignup":{
+    "create": "Create an Account",
+    "phone": "Phone Number:",
+    "email": "Email:",
+    "password": "Password:",
+    "name": "Name:",
+    "signup": "Sign Up"},
+
+  "header":{
+    "chou": "Chou",
+    "login": "Login",
+    "signup": "Sign up"},
+
+  "footer" :{
+    "nameapp": "Chou App",
+    "version": "Version 1.0",
+    "description": "A simple app for Signup & Login",
+    "abdelhadi": "Abdelhadi",
+    "emaildev": "Email:",
+    "phonedev": "Phone:",
+    "massinissa": "Massinissa"}
+}
