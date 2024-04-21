@@ -151,7 +151,7 @@ body {
 .signup-form input[type="text"],
 .signup-form input[type="email"],
 .signup-form input[type="password"],
-.signup-form input[type="tel"] {
+.signup-form input[type="phone"] {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -284,7 +284,7 @@ body {
     color: #333;
 }
 
-.login-form input[type="email"],
+.login-form input[type="phone"],
 .login-form input[type="password"] {
     padding: 10px;
     margin-bottom: 20px;
@@ -307,4 +307,12 @@ body {
 
 .login-form button[type="submit"]:hover {
     background-color: #0a5d26; /* Darker shade of blue */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;    
+}    
+.contact-info {        
+    margin-right: 20px; /* Adjust the value as needed */
 }
