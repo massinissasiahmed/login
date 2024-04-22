@@ -20,7 +20,7 @@ i18next
   .use(i18nextMiddleware.LanguageDetector)
   .init({
     detection: detections,
-    fallbackLng: "fr",
+    fallbackLng: "ar",
     backend: {
       loadPath: "./locales/{{lng}}.json",
     },
@@ -40,8 +40,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Route to render the login page
 app.get("/", (req, res) => {
+  
   res.render("login", {
     title: "Home",
+    isSignupPage: false,
     header: req.t("header", { returnObjects: true }),
     body: req.t("body", { returnObjects: true }),
     footer: req.t("footer", { returnObjects: true }),
@@ -56,11 +58,13 @@ app.get("/login", (req, res) => {
     header: req.t("header", { returnObjects: true }),
     body: req.t("body", { returnObjects: true }),
     footer: req.t("footer", { returnObjects: true }),
+    successMessage: req.query.success,
   }); // Pass isSignupPage as false
 });
 
 // Route for signup page
 app.get("/signup", (req, res) => {
+  
   res.render("signup", {
     title: "Sign Up",
     isSignupPage: true,

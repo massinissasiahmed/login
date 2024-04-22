@@ -1,5 +1,6 @@
 {
   "body":{
+    "welcome":"Bonjour",
     "create": "Créer un compte",
     "phone": "Numéro de téléphone :",
     "email": "Email :",
@@ -24,5 +25,9 @@
     "emaildev": "Email :",
     "phonedev": "Téléphone :",
     "massinissa": "Massinissa",
-    "aymen": "Aymen"}
+    "aymen": "Aymen"
+  },
+  "sweetalert":{
+    "loginSecces":"Connection réussie"
+  }
 }
