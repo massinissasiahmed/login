@@ -39,7 +39,8 @@ const loginUser = async (req, res) => {
       expiresIn: '1h' // Token expires in 1 hour
     });
 
-    res.send({ message: 'Connecte avec succes!', token });
+    res.redirect(`/login?success=${encodeURIComponent('Connection successful!')}`);
+
   } catch (error) {
     res.status(500).send({ message: 'Connexion impossible.', error: error.message });
   }

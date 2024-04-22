@@ -1,5 +1,23 @@
 {{!< layouts/main }}
 
+<!-- Include SweetAlert library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Script to show SweetAlert on successful login -->
+<script>
+  // Check if success message exists in query string
+  const urlParams = new URLSearchParams(window.location.search);
+  const successMessage = urlParams.get('success');
+
+  if (successMessage) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Connection successful!',
+    });
+  }
+</script>
+
+
 <div class="login-container">
   <h2>{{body.create}}</h2>
   <form class="login-form" action="/login" method="post">
@@ -12,6 +30,11 @@
     <button type="submit">{{body.login}}</button>
   </form>
 </div>
+{{!< layouts/main }}
+
+
+
+
 
 <script>
     function getCookie(name) {

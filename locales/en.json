@@ -1,5 +1,6 @@
 {
   "body":{
+    "welcome":"Welcome",
     "create": "Create an Account",
     "phone": "Phone Number:",
     "email": "Email:",
@@ -24,5 +25,9 @@
     "emaildev": "Email:",
     "phonedev": "Phone:",
     "massinissa": "Massinissa",
-    "aymen": "Aymen"}
+    "aymen": "Aymen"
+  },
+  "sweetalert":{
+    "loginSecces":"Login Seccess"
+  }
 }
