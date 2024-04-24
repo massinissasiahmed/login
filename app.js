@@ -31,6 +31,21 @@ app.use(i18nextMiddleware.handle(i18next));
 app.use(cookieparser());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Middleware to add translated strings to req object
+app.use((req, res, next) => {
+  req.translations = {
+    header: req.t("header", { returnObjects: true }),
+    body: req.t("body", { returnObjects: true }),
+    footer: req.t("footer", { returnObjects: true }),
+    sweetalert: req.t("sweetalert", { returnObjects: true }),
+  };
+  req.alerts = {
+    successMessage: req.query.success,
+  };
+  next();
+});
+
 app.use(routes);
 
 // Set Handlebars as the view engine
@@ -40,13 +55,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Route to render the login page
 app.get("/", (req, res) => {
-  
   res.render("login", {
     title: "Home",
     isSignupPage: false,
-    header: req.t("header", { returnObjects: true }),
-    body: req.t("body", { returnObjects: true }),
-    footer: req.t("footer", { returnObjects: true }),
+    ...req.translations,
   });
 });
 
@@ -55,22 +67,17 @@ app.get("/login", (req, res) => {
   res.render("login", {
     title: "Login",
     isSignupPage: false,
-    header: req.t("header", { returnObjects: true }),
-    body: req.t("body", { returnObjects: true }),
-    footer: req.t("footer", { returnObjects: true }),
-    successMessage: req.query.success,
+    ...req.translations,
+    ...req.alerts,
   }); // Pass isSignupPage as false
 });
 
 // Route for signup page
 app.get("/signup", (req, res) => {
-  
   res.render("signup", {
     title: "Sign Up",
     isSignupPage: true,
-    header: req.t("header", { returnObjects: true }),
-    body: req.t("body", { returnObjects: true }),
-    footer: req.t("footer", { returnObjects: true }),
+    ...req.translations,
   }); // Pass isSignupPage as true
 });
 
